@@ -1,10 +1,11 @@
 // Problem 1492 (Amazon Spring '23')
 #include <iostream>
+#include <vector>
 
 class Solution {
   public:
     int kthFactor(int n, int k) {
-        vector<int> factors; 
+        std::vector<int> factors; 
         int i = 1;
         while (i <= n) {
             if (n%i == 0) {

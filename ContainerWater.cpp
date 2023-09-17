@@ -1,9 +1,11 @@
 #include <iostream>
 #include <algorithm> 
+#include <cmath>
 #include <vector> 
 
 int maxArea(std::vector<int>); 
 int main(int argc, char** argv) {
+  // pushing the values into the vector 
   std::vector<int> height; // adding 9 elements 
   height.push_back(1); 
   height.push_back(8); 
@@ -15,6 +17,7 @@ int main(int argc, char** argv) {
   height.push_back(3); 
   height.push_back(7); 
 
+  
   std::cout << "Entering the function" << std::endl; 
   int finalValue = maxArea(height); // getting the maximum value of the function 
 

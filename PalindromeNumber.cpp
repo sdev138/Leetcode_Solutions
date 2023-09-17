@@ -1,6 +1,17 @@
 #include <iostream>
 #include <vector>
 
+class Node {
+private:
+  int value;
+
+public:
+  Node() {} // empty constructor
+  Node(int val) {
+    value = val;
+  }
+};
+
 class Solution {
   public:
 
