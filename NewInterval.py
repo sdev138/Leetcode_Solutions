@@ -13,15 +13,18 @@ class Solution:
             elif newInterval[0] > intervals[i][1]:
                 res.append(intervals[i])
             else:
-                newInterval = [min(newInterval[0], intervals[i][0]), max(newInterval[1], intervals[i][1])]
+                newInterval = [min(newInterval[0], intervals[i][0]), max(
+                    newInterval[1], intervals[i][1])]
         res.append(newInterval)
         return res
 
+
 def main():
-    input = [[1,2], [5,8], [10, 15]]
+    input = [[1, 2], [5, 8], [10, 15]]
     target = [2, 9]
     solution = Solution()
     result = solution.insert(input, target)
     print("Value of result: ", result)
+
 
 main()

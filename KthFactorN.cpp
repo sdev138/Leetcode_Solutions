@@ -19,4 +19,10 @@ class Solution {
             return factors[k-1]; 
         }
     }
+
+    private:
+
+    void findValue(int value) {
+        return value
+    }
 };

@@ -6,16 +6,24 @@ class Solution:
         print("In the merge function")
         start = 0
         end = 0
-        ans = []
         for interval in intervals:
-            # iterating through the interval 
+            # iterating through the interval
             startCurrent = interval[0]
             endCurrent = interval[-1]
             if endCurrent <= end:
                 end = endCurrent
+                start = startCurrent
+        return intervals
+
+# calling the main function
+
+def printHelloWorld():
+    print("Hello World")
+    return
 
 def main():
     print("In the main function")
     pass
+    print("After the pass keyword")
 
 main()
