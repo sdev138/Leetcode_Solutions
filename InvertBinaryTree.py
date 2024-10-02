@@ -6,6 +6,7 @@ class TreeNode:
 
 # the solution class
 class Solution:
+    # inverting the tree
     def invertTree(self, root: TreeNode):
         # if the root is empty, don't return anything at all
         if not root:
@@ -21,6 +22,7 @@ class Solution:
         self.invertTree(root.right)
         return root
 
+    # printing tree
     def printTree(self, root: TreeNode):
         if not root:
             return None
