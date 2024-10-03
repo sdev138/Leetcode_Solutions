@@ -20,6 +20,7 @@ class Solution:
         return res
 
 
+# main function
 def main():
     input = [[1, 2], [5, 8], [10, 15]]
     target = [2, 9]

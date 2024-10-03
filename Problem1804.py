@@ -30,8 +30,6 @@ class Trie:
         if word in self.storage and self.storage[word] > 0:
             self.storage[word] -= 1
             self.fullList.remove(word)
-            # while word in self.fullList:
-            #     self.fullList.remove(word)
         return
 
 # Your Trie object will be instantiated and called as such:
