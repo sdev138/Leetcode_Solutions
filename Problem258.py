@@ -15,6 +15,7 @@ class Solution:
 
 def main():
     valueParam = 38
+    # valueParam = 122
     solution = Solution()
     output = solution.addDigits(valueParam)
     print("Value of output: ", output)

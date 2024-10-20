@@ -7,7 +7,7 @@ class Solution:
         else:
             # making the last digit zero
             digits[len(digits)-1] = 0
-                        if len(digits) > 1:
+            if len(digits) > 1:
                 nextElement = len(digits) - 2
                 while nextElement != 0:
                     if digits[nextElement] < 9:

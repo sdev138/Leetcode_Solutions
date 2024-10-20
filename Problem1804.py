@@ -55,7 +55,7 @@ def main():
     solution = [2, 2]
     output = [param2, param3]
     if solution != output:
-        print("ERROR::::\nHere is your output: {}\n Here is the solution: {}".format(output, solution))
+        print("ERROR::::\nHere is your output: {}\n Here is your output: {}".format(output, solution))
     else:
         print("Solution is correct!")
 

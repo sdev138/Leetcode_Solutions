@@ -4,17 +4,18 @@ class Solution:
         res = []
         # iterating through the list
         for i in range(len(intervals)):
-            # if the last element of a new interval is less than the beginning element of any interval
+            # if the last element of a new interval is less than the
+            # beginning element of any interval
             if newInterval[1] < intervals[i][0]:
-                # if this is the case we add the element and return the remaining intervals
+                # if this is the case we add the element
+                # and return the remaining intervals
                 res.append(newInterval)
                 return res + intervals[i:]
             # if the beginning element is greater than the last element of any interval, we simply add the iterated interval to the result list
             elif newInterval[0] > intervals[i][1]:
                 res.append(intervals[i])
             else:
-                newInterval = [min(newInterval[0], intervals[i][0]), max(
-                    newInterval[1], intervals[i][1])]
+                newInterval = [min(newInterval[0], intervals[i][0]), max(newInterval[1], intervals[i][1])]
         res.append(newInterval)
         # returning the result
         return res
