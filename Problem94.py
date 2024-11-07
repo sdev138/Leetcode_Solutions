@@ -10,3 +10,7 @@ class Solution:
             self.helper(root.left, result)
             result.append(root.val)
             self.helper(root.right, result)
+
+def main():
+    # create your nodes
+    # perform inorder traversal
