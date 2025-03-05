@@ -4,7 +4,7 @@
 class Solution {
   public:
     int kthFactor(int n, int k) {
-        vector<int> factors; 
+        std::vector<int> factors; 
         int i = 1;
         while (i <= n) {
             if (n%i == 0) {
@@ -22,7 +22,12 @@ class Solution {
 
     private:
 
-    void findValue(int value) {
-        return value
+    int returnValue(int value) {
+        return value;
+    }
+
+    void setValue(int value) {
+        int currentValue = value;
+        return;
     }
 };

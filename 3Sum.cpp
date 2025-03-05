@@ -5,6 +5,7 @@ class Node {
   Node *next; 
   int val; 
 
+  // empty constructor
   Node() {}
   Node(int value) {
     val = value; 

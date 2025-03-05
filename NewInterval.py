@@ -23,10 +23,10 @@ class Solution:
 
 # main function
 def main():
-    input = [[1, 2], [5, 8], [10, 15]]
+    inputArray = [[1, 2], [5, 8], [10, 15]]
     target = [2, 9]
     solution = Solution()
-    result = solution.insert(input, target)
+    result = solution.insert(inputArray, target)
     print("Value of result: ", result)
 
 

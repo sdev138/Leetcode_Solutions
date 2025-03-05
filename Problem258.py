@@ -20,4 +20,5 @@ def main():
     output = solution.addDigits(valueParam)
     print("Value of output: ", output)
 
+
 main()

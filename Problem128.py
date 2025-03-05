@@ -16,4 +16,5 @@ class Solution:
             else:
                 subSeq = 1
             longestSubSeq = max(longestSubSeq, subSeq)
+        print(longestSubSeq)
         return longestSubSeq

@@ -1,6 +1,7 @@
 # The following is a solution to problem 56 "Merge Intervals"
 # Incomplete
 
+
 class Solution:
     def merge(self, intervals: list[list[int]]) -> list[list[int]]:
         print("In the merge function")
@@ -15,15 +16,19 @@ class Solution:
                 start = startCurrent
         return intervals
 
+
 # calling the main function
+
 
 def printHelloWorld():
     print("Hello World")
+    print("Testing some helix config changes as well as changes to zsh")
     return
 
 def main():
     print("In the main function")
     pass
     print("After the pass keyword")
+
 
 main()
