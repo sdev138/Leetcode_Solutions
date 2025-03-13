@@ -2,3 +2,4 @@
 
 class Solution:
     def mostExpensiveItem(self, primeOne: int, primeTwo: int):
+        print("Beginning of the function")
