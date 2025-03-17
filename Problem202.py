@@ -10,7 +10,6 @@ class Solution:
             output = 0
             for i in str(n):
                 output += int(i) ** 2
-            
             while True:
                 if output == 1:
                     return True
@@ -22,6 +21,7 @@ class Solution:
                     for i in str(output):
                         temp += int(i) ** 2
                     output = temp
+
 
 # Recursive Solution (Faster than 40% runtime, better than 100% memory)
 class SolutionRecursive:
@@ -46,6 +46,6 @@ class SolutionRecursive:
             output = 0
             storage.append(num)
             for i in str(num):
-                output += (int(i) ** 2)
+                output += int(i) ** 2
 
             return self.checkHappy(output, storage)
