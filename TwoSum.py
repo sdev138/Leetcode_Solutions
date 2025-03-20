@@ -26,4 +26,13 @@ def main():
     returnedIndices = solution.twoSum([3, 4, 1, 6, 5, 9], 15)
     print("Here are the following indices: ", returnedIndices)
 
+    left = 0
+    right = 5
+    testing = [0, 1, 2, 3, 4, 5]
+
+    if left and right in testing:
+        print("Both left and right exist")
+    else:
+        print("Conditional works, but logic doesn't match")
+
 main()

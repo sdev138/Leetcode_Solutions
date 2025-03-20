@@ -10,6 +10,7 @@ class Solution:
             output = 0
             for i in str(n):
                 output += int(i) ** 2
+
             while True:
                 if output == 1:
                     return True
@@ -31,8 +32,6 @@ class SolutionRecursive:
         if n == 1:
             return True
 
-        # storage = {}
-        # storage[n] = []
         storage = []
 
         return self.checkHappy(n, storage)
