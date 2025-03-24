@@ -48,3 +48,24 @@ class SolutionRecursive:
                 output += int(i) ** 2
 
             return self.checkHappy(output, storage)
+
+def main():
+    print("Welcome to Problem 202, The Happy Number Checker!")
+    # feel free to change the number here
+    num = 19
+    iterativeSolution = Solution()
+    recursiveSolution = SolutionRecursive()
+
+    print("Current Number to check: ", num)
+
+    if iterativeSolution.isHappy(num):
+        print("The number is happy")
+    else:
+        print("The number is not happy")
+
+    if recursiveSolution.isHappy(num):
+        print("The number is happy")
+    else:
+        print("The number is not happy")
+
+main()
