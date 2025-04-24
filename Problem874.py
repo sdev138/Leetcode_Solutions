@@ -1,69 +1,41 @@
 class Solution:
-    def iterateDirection(
-        self, currentPoint, currentDirection, obstacles, command
-    ) -> list[int]:
-    # use list splicing to check if the point is within a certain range
-        if currentDirection == "north":
-            i = 0
-            while i < command:
-                if [currentPoint[0], currentPoint[-1] + 1] in obstacles:
-                    break
-                currentPoint = [currentPoint[0], currentPoint[-1] + 1]
-                i += 1
-        elif currentDirection == "south":
-            i = 0
-            while i < command:
-                if [currentPoint[0], currentPoint[-1] - 1] in obstacles:
-                    break
-                currentPoint = [currentPoint[0], currentPoint[-1] - 1]
-                i += 1
-        elif currentDirection == "west":
-            i = 0
-            while i < command:
-                if [currentPoint[0] - 1, currentPoint[-1]] in obstacles:
-                    break
-                currentPoint = [currentPoint[0] - 1, currentPoint[-1]]
-                i += 1
-        else:  # east
-            i = 0
-            while i < command:
-                if [currentPoint[0] + 1, currentPoint[-1]] in obstacles:
-                    break
-                currentPoint = [currentPoint[0] + 1, currentPoint[-1]]
-                i += 1
+    def __init__(self):
+        self.HASH_MULTIPLIER = (
+            60013  # Slightly larger than 2 * max coordinate value
+        )
 
-        # returning the current point once the algorithm finishes
-        return currentPoint
+    def robotSim(self, commands: List[int], obstacles: List[List[int]]) -> int:
+        # Store obstacles in an set for efficient lookup
+        obstacle_set = {self._hash_coordinates(x, y) for x, y in obstacles}
 
-    # main function that will be executed
-    # Using the 'list' instead of the 'List' library
-    def robotSim(self, commands: list[int], obstacles: list[list[int]]) -> int:
-        currentPoint = [0, 0]
-        maxDistance = 0
-        currentDirection = "north"
-        turnRight = {
-            "north": "east",
-            "east": "south",
-            "south": "west",
-            "west": "north",
-        }
-        turnLeft = {
-            "north": "west",
-            "south": "east",
-            "west": "south",
-            "east": "north",
-        }
+        # Define direction vectors: North, East, South, West
+        directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
 
-        # iterating through the different commands
+        x, y = 0, 0
+        max_distance_squared = 0
+        current_direction = 0  # 0: North, 1: East, 2: South, 3: West
+
         for command in commands:
-            if command == -1:
-                currentDirection = turnRight[currentDirection]
-            elif command == -2:
-                currentDirection = turnLeft[currentDirection]
-            else:
-                currentPoint = self.iterateDirection(currentPoint, currentDirection, obstacles, command)
+            if command == -1:  # Turn right
+                current_direction = (current_direction + 1) % 4
+                continue
 
-            # Getting the distance from the point and comparing it to previous maxDistance
-            maxDistance = max(maxDistance, (currentPoint[0] ** 2) + (currentPoint[1] ** 2))
+            if command == -2:  # Turn left
+                current_direction = (current_direction + 3) % 4
+                continue
 
-        return maxDistance
+            # Move forward
+            dx, dy = directions[current_direction]
+            for _ in range(command):
+                next_x, next_y = x + dx, y + dy
+                if self._hash_coordinates(next_x, next_y) in obstacle_set:
+                    break
+                x, y = next_x, next_y
+
+            max_distance_squared = max(max_distance_squared, x * x + y * y)
+
+        return max_distance_squared
+
+    # Hash function to convert (x, y) coordinates to a unique integer value
+    def _hash_coordinates(self, x: int, y: int) -> int:
+        return x + self.HASH_MULTIPLIER * y
