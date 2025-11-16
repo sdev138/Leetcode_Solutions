@@ -18,17 +18,10 @@ class Solution:
 
 
 # calling the main function
-
-
-def printHelloWorld():
-    print("Hello World")
-    print("Testing some helix config changes as well as changes to zsh")
-    return
-
 def main():
-    print("In the main function")
-    pass
-    print("After the pass keyword")
-
+    solution = Solution()
+    intervals = [[1, 2, 3, 4, 5], [3, 4, 5, 6, 7, 8]]
+    output = solution.merge(intervals)
+    print(output)
 
 main()

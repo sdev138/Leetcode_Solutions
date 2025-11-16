@@ -1,8 +1,18 @@
 #include <iostream>
-#include <vector>
+
+void testingZedC();
 
 int main(int argc, char** argv) {
-  printf("Testing Tokyonight theme");
+  testingZedC();
+  std::cout << "Testing vscode c++ lsp" << std::endl;
 
   return 0;
+}
+
+void testingZedC() {
+  std::cout << "Testing Zed C++ compatability" << std::endl;
+}
+
+void testingVSCode() {
+  std::cout << "Testing vscode compatability" << std::endl;
 }

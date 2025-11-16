@@ -1,7 +1,7 @@
 class Solution:
-    self __init__(capacity: int):
+    def __init__(self, capacity: int):
         self.capacity = capacity
 
-    def printHello():
+    def printHello(self):
         print("Hello World")
         return

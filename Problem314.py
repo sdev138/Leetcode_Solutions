@@ -1,6 +1,7 @@
 # The TreeNode class is already built in Leetcode
 from collections import defaultdict, deque
 
+
 class Solution:
     # BFS Solution
     def verticalOrder(self, root: Optional[TreeNode]) -> list[list[int]]:

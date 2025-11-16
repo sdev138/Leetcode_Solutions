@@ -1,3 +1,4 @@
+# Actual solution
 class Solution:
     def hIndex(self, citations: list[int]) -> int:
         citations.sort()
@@ -6,7 +7,7 @@ class Solution:
             i += 1
 
         return i
-            
+
 # For testing purposes only
 def main():
     test = [3, 0, 6, 1, 5]

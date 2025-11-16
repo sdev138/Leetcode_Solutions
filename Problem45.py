@@ -1,4 +1,5 @@
 class Solution:
+    # used List instead of list (leetcode build in libraries)
     def jump(self, nums: List[int]) -> int:
         totalJumps = 0
         for i in range(len(nums)):
@@ -17,3 +18,5 @@ class Solution:
                     i = j - 1
 
             totalJumps += 1
+
+        return totalJumps
